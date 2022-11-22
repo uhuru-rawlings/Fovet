@@ -1,0 +1,61 @@
+.auth_content{
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    color: #152C49;
+}
+.auth_content #main-row{
+    height: 100%;
+}
+.auth_content #main-row #form-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+form .form-control{
+    height: 45px;
+}
+form .btn-primary{
+    height: 45px;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 18px;
+    background-color: #F28F37;
+    color: #FFFFFF;
+    border-color: #F28F37 !important;
+    transition: 0.75s;
+}
+form .btn-primary:hover{
+    background-color: #F28F37;
+    color: #FFFFFF;
+    opacity: 0.75;
+}
+.auth_content #main-row form .form-group{
+    margin-bottom: 10px;
+}
+.auth_content .row form{
+    width: 60%;
+    margin: auto;
+}
+img#home{
+    object-fit: cover;
+    object-position: center;
+}
+form img{
+    object-fit: fill;
+}
+.logo{
+    width: 130px;
+    height: 130px;
+    margin: auto;
+}
+.d-flex a{
+    text-decoration: none;
+    color: #1862AB;
+}
+
+@media screen and (max-width: 540px){
+    #image_section{
+        display: none;
+    }
+}
