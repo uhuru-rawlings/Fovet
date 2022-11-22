@@ -10,7 +10,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/Transparent.png" type="image/x-icon">
-
+    <!-- RECAPCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,7 +152,7 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                    <form action="contact.php" method="post">
+                    <form action="contact.php" method="post" id="contact-form" style="position: relative;">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" name="fullname" id="fullname" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;" required>
@@ -163,11 +164,13 @@
                                 <input type="text" name="Subject" id="Subject" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <textarea name="Message" id="Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message" required></textarea>
+                                <textarea name="Message" id="Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message" onclick="return submitForm()" required></textarea>
                             </div>
+                            <input type="hidden" name="token" id="token" class="form-control">
                             <div class="col-12">
                                 <button type="submit" name="contact" class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
+                            <div id="recaptcha"></div>
                         </div>
                     </form>
                 </div>
@@ -250,11 +253,25 @@
     </div>
     <!-- Footer End -->
 
-
+    <script type="text/javascript">
+        var widgetid;
+      var onloadCallback = function() {
+        widgetid = grecaptcha.render('recaptcha', {
+          'sitekey' : '6LecdCgjAAAAAJe3u44xa8uk0W-iEWSsOQSirP3P'
+        });
+      };
+      function submitForm(){
+          var response = grecaptcha.getResponse(widgetid);
+            if(!response){
+                alert('please check the recaptcha to procceed.');
+            }
+      }
+    </script>
+     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
     <!-- JavaScript Libraries -->
     <script src="js/validation.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

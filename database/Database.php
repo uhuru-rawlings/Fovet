@@ -15,7 +15,7 @@
             // $this -> db_host     = "localhost";
             // $this -> db_user     = "gqgxzrdp_fovet_main";
             // $this -> db_name     = "gqgxzrdp_fovet_main";
-            // $this -> db_password = " _)o=HzA^fE.g";
+            // $this -> db_password = "LN@9!fZDwzFT";
        }
 
        public function connection()
