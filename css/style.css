@@ -526,3 +526,6 @@ h6,
     top: 0;
     right: 0; */
 }
+.services_main_section img{
+    max-height: 300px;
+}
