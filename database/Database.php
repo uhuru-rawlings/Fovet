@@ -12,6 +12,10 @@
             $this -> db_user     = "root";
             $this -> db_name     = "fovet";
             $this -> db_password = "";
+            // $this -> db_host     = "localhost";
+            // $this -> db_user     = "gqgxzrdp_fovet_main";
+            // $this -> db_name     = "gqgxzrdp_fovet_main";
+            // $this -> db_password = " _)o=HzA^fE.g";
        }
 
        public function connection()
