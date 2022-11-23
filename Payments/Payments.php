@@ -10,7 +10,7 @@
 
         public function makePayments()
         {
-            header("Content-Type: application/json");
+            
 
             $response = '{
                 "ResultCode": 0, 
@@ -54,7 +54,7 @@
                     $conn = null;
             }
 
-            echo $response;
+            return $response;
         }
     }
 ?>
