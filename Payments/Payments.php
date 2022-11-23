@@ -41,20 +41,19 @@
             $MpesaReceiptNumber = $callbackContent->Body->stkCallback->CallbackMetadata->Item[1]->Value;
             $PhoneNumber = $callbackContent->Body->stkCallback->CallbackMetadata->Item[4]->Value;
             if ($Resultcode == 0) {
-                // Check connection
-                // $insert = mysqli_query($conn,"INSERT INTO Payments(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber) VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')");
                 $sql = "INSERT INTO Payments(CheckoutRequestID,ResultCode,Amount,MpesaReceiptNumber,PhoneNumber) VALUES(?,?,?,?,?)";
                 $query = $this -> conn -> prepare($sql);
                 $query -> execute([$CheckoutRequestID,$Resultcode,$Amount,$MpesaReceiptNumber,$PhoneNumber]);
                 unset($mpesaResponse);
                 if($query){
-                    unset($logFile);
+                    unlink('M_PESAConfirmationResponse.json');
+                   
                 }
 
-                    $conn = null;
+                     return true;
             }
-
-            return $response;
+            unlink('M_PESAConfirmationResponse.json');
+            return false;
         }
     }
 ?>

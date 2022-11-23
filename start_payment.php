@@ -6,8 +6,8 @@
 
   date_default_timezone_set('Africa/Nairobi');
 
-  $consumerKey = 'QgLpGq3OXvevw4SCxMjtLABUhAkNItbr'; //Fill with your app Consumer Key
-  $consumerSecret = 'B9s0m2P4vcejar0j'; // Fill with your app Secret
+  $consumerKey = 'BGAGy8CmcuXZgFAjTpueF3hT0LeZpuot'; //Fill with your app Consumer Key
+  $consumerSecret = 'VqOpJlIltQ2cAS86'; // Fill with your app Secret
 
   $BusinessShortCode = '174379'; #replace with till number
   $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
