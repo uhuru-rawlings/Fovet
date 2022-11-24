@@ -10,7 +10,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/Transparent.png" type="image/x-icon">
-
+    <!-- RECAPCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,7 @@
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"><img src="assets/images/Full-black-Transparent.png" alt="background image"></div>
+        <div class="spinner"><img src="assets/images/Full-black-Transparent.png" alt=""></div>
     </div>
     <!-- Spinner End -->
 
@@ -45,7 +46,7 @@
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Thogoto Road United Estate House No 34</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i><a href="mailto:info@fovet.co" class="text-white">info@fovet.co</a></small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@fovet.co</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
@@ -65,7 +66,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0" style="width: 150px; height: 70px;">
-                <img src="assets/images/Transparent.png" width="100%" height="100%" style="object-fit: scale-down;" alt="image">
+                <img src="assets/images/Transparent.png" width="100%" height="100%" style="object-fit: scale-down;" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -73,19 +74,19 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="training.html" class="nav-item nav-link">Training</a>
+                    <a href="training.html" class="nav-item nav-link active">Training</a>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
                     <a href="auth/index.html" id="auth_accounts" class="nav-item nav-link">Login/Signup</a>
                 </div>
             </div>
         </nav>
 
-        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+        <div class="container-fluid bg-primary py-5 bg-header" id="contact-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">About Us</h1>
+                    <h1 class="display-4 text-white animated zoomIn">Training</h1>
                 </div>
             </div>
         </div>
@@ -111,90 +112,77 @@
     </div>
     <!-- Full Screen Search End -->
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Contact Start -->
+    <div class="container-fluid py-3 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">About Fovet</h1>
-                    </div>
-                    <p class="mb-4">
-                        FoVET Research & Consultancy Ltd is a Kenyan based research, capacity building and consultancy firm (FoVET is the for-profit arm of Vision & Empowerment Trust (VET), which is a non-profit) with its head office in Nairobi, Kenya. FoVET offers research, monitoring and evaluation consultancy services as well as capacity building services tailored for individuals and groups affiliated to mainly Non-Profit Organizations and private sectors who wish to understand research, monitoring and evaluation from a practical perspective. FoVET has identified itself with a market niche comprising on education research with teams able to conduct both quantitative and qualitative researches. We have also built a working network with professional institutions, international research organizations and local non governmental and community based organizations. Our capacity building and consultancy services are in the areas of data collection (both remote and in-person), qualitative research, education (learning) assessments, education programmes monitoring and evaluation, programme design and proposal writing among others. Our training services are aimed helping individuals improve their professional knowledge, competence, skills, and effectiveness and enable the institutions to get the best out of their research, monitoring and evaluation teams. This is achieved through conducting short-time impact professional short courses, conferences, workshops and seminars
+            <h1>Data collection Course</h4>
+            <div class="row gx-3">
+                <div class="col-sm-4 m-auto">
+                    <img src="img/training.jpg" width="100%" style="height: auto;" alt="">
+                    <p>Duration: 3 months</p>
+                </div>
+                <div class="col-sm-8">
+                    <p>
+                        The course will encourage creative thinking, and the development
+                            of leadership and management skills through teamwork, discussion
+                            and peer review. You’ll develop new skills to an advanced level,
+                            becoming a highly-skilled manager capable of administering
+                            major projects within and across different organisations.
+                        Project management knowledge areas (time, risk, cost, etc.) 
+                        and culture, interfacing and working with virtual teams, 
+                    </p>
+                    <p>
+                        procurement (off-shoring, near-shoring). Theoretical foundations 
+                        required to build the necessary critical thinking and appreciation
+                            needed for practical application that cover the following subject
+                            matter: fundamentals of Project Management and associated
+                            knowledge areas (risk, cost, time, etc.); fundamentals of Cross-Cultural Management relative to the findings of various cultural anthropologists and The Globe Project (Hall, Hofstede, Trompenaars, Molinsky, etc.). Discussion centres on the cultural work ethic, perception of time, business behaviours, as well as the ad-hoc cultural components of language and religion.
                     </p>
                 </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.jpg" style="object-fit: cover;">
+            </div>
+            <h3 class="py-4">Why you register to this programe.</h3>
+            <p>
+                Individuals who are required to manage projects or are employed as members
+                of a project team with intercultural/international components. Managers
+                (in)directly involved in the project such as corporate sponsors or other stakeholders.
+            </p>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <!-- registration form -->
+    <div class="container">
+        <h3 class="text-center">Apply Now</h3>
+        <div class="registration_form">
+            <div class="carousel">
+                <form action="" method="post" class="col-sm-6 m-auto">
+                    <div class="form-group">
+                        <label for="Fullname">Fullname</label>
+                        <input type="text" name="Fullname" id="Fullname" class="form-control" placeholder="Enter Fullname" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone</label>
+                        <input type="tel" name="Phone" id="Phone" class="form-control" placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Alt_Phone">Alternative Phone</label>
+                        <input type="tel" name="Alt_Phone" id="Alt_Phone" class="form-control" placeholder="Enter Alternative Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Start_date">Start Date</label>
+                        <input type="date" name="Start_date" id="Start_date" class="form-control" placeholder="Start Date" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Application" name="apply" class="btn btn-primary">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!-- About End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Drive</h5>
-                <h1 class="mb-0">Objectives, Mission and Vision Statement</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 wow slideInUp" data-wow-delay="0.3s">
-                    <h3 class="mb-0 text-center">Mission</h3>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p>
-                                To develop a globally competent, adaptable, and dedicated workforce that meets and addresses changing developmental needs and challenges through the provision of optimally tailored solutions for individual aspirations and organizational excellence needs and being a strategic partner to our clients. 
-                            </p>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="assets/images/mission.jpg" width="100%" height="auto" alt="Mission Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 wow slideInUp" data-wow-delay="0.6s">
-                    <h3 class="mb-0 text-center">Vision</h3>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img src="assets/images/vission.jpg" width="100%" height="auto" alt="Vission image">
-                        </div>
-                        <div class="col-sm-8">
-                            <p>
-                                To become one of the most trusted research, consultancy and training organization for non-profits, private and public sectors in Africa and beyond
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 wow slideInUp" data-wow-delay="0.9s">
-                    <h3 class="mb-0 text-center">Objectives</h3>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p>
-                                To provide world-class research and consultancy services that improve productivity of individuals and institutions working in civil society, private and public sector.
-                            </p>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="assets/images/objectives.jpg" width="100%" height="auto" alt="Objectives">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    
-
+    <!-- end registration form -->
      <!-- Footer Start -->
      <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -202,7 +190,7 @@
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="navbar-brand">
                         <div class="logo" style="width: 200px;">
-                            <img src="assets/images/Transparent.png" width="100%" height="100%" alt="Navbar image">
+                            <img src="assets/images/Transparent.png" width="100%" height="100%" alt="">
                         </div>
                     </a>
                 </div>
@@ -235,6 +223,7 @@
                                 <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                                 <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                                 <a class="text-light mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="training.html"><i class="bi bi-arrow-right text-primary me-2"></i>Training</a>
                                 <a class="text-light mb-2" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                             </div>
                         </div>
@@ -248,7 +237,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6 m-auto">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <span id="years"></span> <a class="text-white border-bottom" href="#">Fovet</a> | All Rights Reserved. </p>
+                        <p class="mb-0">&copy; <span id="years"></span> <a class="text-white border-bottom" href="#">Fovet</a> | All Rights Reserved.</p>
                     </div>
                     <script>
                         var date = new Date();
@@ -260,23 +249,24 @@
         </div>
     </div>
     <!-- Footer End -->
-
-
+    <script src="js/validation.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/validation.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="lib/wow/wow.min.js" defer></script>
+    <script src="lib/easing/easing.min.js" defer></script>
+    <script src="lib/waypoints/waypoints.min.js" defer></script>
+    <script src="lib/counterup/counterup.min.js" defer></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

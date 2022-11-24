@@ -116,13 +116,109 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="text-center">Page Under Development</h1>
+            <div class="row gx-3">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="img/training.jpg" width="100%" style="height: auto;" alt="">
+                        <div class="card-body">
+                            <h4>Data collection Course</h4>
+                            <p>Duration: 3 months</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="course-details.html">
+                                        <button class="btn btn-primary">Read More</button>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-primary" onclick="openApplicationForm()">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="img/training.jpg" width="100%" style="height: auto;" alt="">
+                        <div class="card-body">
+                            <h4>Data collection Course</h4>
+                            <p>Duration: 3 months</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="course-details.html">
+                                        <button class="btn btn-primary">Read More</button>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-primary" onclick="openApplicationForm()">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="img/training.jpg" width="100%" style="height: auto;" alt="">
+                        <div class="card-body">
+                            <h4>Data collection Course</h4>
+                            <p>Duration: 3 months</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="course-details.html">
+                                        <button class="btn btn-primary">Read More</button>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-primary" onclick="openApplicationForm()">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Contact End -->
-
-    
-
+    <!-- carousel  -->
+    <div class="carousel-container" id="carousel-container">
+        <div class="container py-4">
+            <div class="carousel col-sm-6 m-auto card">
+                <div class="card-header">
+                    <h3 class="text-center">Fill The Form To Apply</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="Fullname">Fullname</label>
+                            <input type="text" name="Fullname" id="Fullname" class="form-control" placeholder="Enter Fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone</label>
+                            <input type="tel" name="Phone" id="Phone" class="form-control" placeholder="Enter Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Alt_Phone">Alternative Phone</label>
+                            <input type="tel" name="Alt_Phone" id="Alt_Phone" class="form-control" placeholder="Enter Alternative Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Start_date">Start Date</label>
+                            <input type="date" name="Start_date" id="Start_date" class="form-control" placeholder="Start Date" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Application" name="apply" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-secondary" onclick="closeApplicationForm()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end carousel -->
      <!-- Footer Start -->
      <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -190,20 +286,7 @@
     </div>
     <!-- Footer End -->
 
-    <script type="text/javascript">
-        var widgetid;
-      var onloadCallback = function() {
-        widgetid = grecaptcha.render('recaptcha', {
-          'sitekey' : '6LecdCgjAAAAAJe3u44xa8uk0W-iEWSsOQSirP3P'
-        });
-      };
-      function submitForm(){
-          var response = grecaptcha.getResponse(widgetid);
-            if(!response){
-                alert('please check the recaptcha to procceed.');
-            }
-      }
-    </script>
+    <script src="js/validation.js"></script>
      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
     </script>

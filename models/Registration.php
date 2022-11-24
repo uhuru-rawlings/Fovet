@@ -68,5 +68,20 @@
                 return false;
             }
         }
+
+        public function getUser()
+        {
+            $sql = "SELECT * FROM Registration WHERE Email = ?";
+            $query = $this -> conn -> prepare($sql);
+            $query -> execute([$this -> Email]);
+            $rows = $query -> rowCount();
+            if($rows > 0){
+                while($results = $query -> fetch(PDO::FETCH_ASSOC)){
+                    return $results;
+                }
+            }else{
+                return false;
+            }
+        }
     }
 ?>

@@ -2,5 +2,7 @@
     "cSpell.words": [
         "Fovet",
         "Fullname"
-    ]
+    ],
+    "editor.autoIndent": "brackets",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }
