@@ -1,7 +1,7 @@
 <?php
 
 // from form
-// if(isset($_POST['submit'])){
+if(isset($_POST['pay'])){
 
 
   date_default_timezone_set('Africa/Nairobi');
@@ -12,10 +12,10 @@
   $BusinessShortCode = '174379'; #replace with till number
   $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
   
-  $PartyA = '0705287224'; // This is your phone number, 
+  $PartyA = $_POST['phonenumber']; // This is your phone number, 
   $AccountReference = '2255';
   $TransactionDesc = 'Test Payment';
-  $Amount = '20';
+  $Amount = '1';
  
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
   $Timestamp = date('YmdHis');    
@@ -72,5 +72,6 @@
   $curl_response = curl_exec($curl);
   //print results
   echo $curl_response;
-// };
+  header("Location: payments.html");
+};
 ?>

@@ -1,5 +1,4 @@
 <?php
-    ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
     header("Content-Type: application/json");
     include_once("Payments/Payments.php");
     include_once("database/Database.php");
@@ -8,5 +7,9 @@
     $db = $conn -> connection();
     $pay = new Payments($db);
     $save = $pay -> makePayments();
-    echo $save;
+    // if($save){
+    //     header("Location: payments.html?success=Payment was successful, We will contact you as soon as possible for your next move.");
+    // }else{
+    //     header("Location: payments.html?error=Payment process was interrupted, if any amount was deducted please contact us for followups.");
+    // }
 ?>
