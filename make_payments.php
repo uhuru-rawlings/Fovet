@@ -8,10 +8,8 @@
     $pay = new Payments($db);
     $save = $pay -> makePayments();
     if($save){
-        echo "<script>alert('saved')</script>";
-        echo "<script>window.location.href='http://127.0.0.1/Fovet/payments.html'</script>";
+        header("Location: payments.php?success=Payment was successful, We will get to you shortly.");
     }else{
-        echo "<script>alert('Payment process was interrupted, if any amount was deducted please contact us for follow ups')</script>";
-        echo "<script>window.location.href='http://127.0.0.1/Fovet/payments.html'</script>";
+        header("Location: payments.php?success=Payment process was interrupted, if any amount was deducted please contact us for follow ups.");
     }
 ?>

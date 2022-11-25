@@ -19,11 +19,10 @@
         $application -> StartDate  = $Start_date;
         $save  = $application -> saveApplication();
         if($save){
-            echo"<script>alert('Application sent, We will get to you soon for your next step.')</script>";
-            echo"<script>setTimeout(() => { history.go(-1) },2500)</script>";
+            header("Location: payments.php?success=Application sent, We will get to you soon for your next step.");
         }else{
             echo "<script>alert('Oops! something went wrong, Either you had applied before, If not true please repeat the process.')</script>";
-            echo"<script>setTimeout(() => { history.go(-1) },2500)</script>";
+            echo"<script>setTimeout(() => { history.go(-1) },1500)</script>";
         }
     }
 ?>

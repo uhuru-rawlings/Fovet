@@ -122,6 +122,16 @@
                 </div>
                 <div class="col-lg-6">
                     <h3 class="text-center">Make Payments Via Mpesa</h3>
+                    <?php
+                        if(isset($_GET['success'])){
+                            echo "<div class='alert alert-success'>{$_GET['success']}</div>";
+                        }else if($_GET['error']){
+                            echo "<div class='alert alert-success'>{$_GET['error']}</div>";
+                        }
+                    ?>
+                    <div class="alert alert-danger">
+                        Do not use!,currently under maintenance.
+                    </div>
                     <form action="start_payment.php" method="post">
                         <div class="form-group" style="margin-bottom: 15px;">
                             <label for="phonenumber">Phone Number</label>
