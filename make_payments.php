@@ -1,5 +1,5 @@
 <?php
-    header("Content-Type: application/json");
+    // header("Content-Type: application/json");
     include_once("Payments/Payments.php");
     include_once("database/Database.php");
 
@@ -7,9 +7,11 @@
     $db = $conn -> connection();
     $pay = new Payments($db);
     $save = $pay -> makePayments();
-    // if($save){
-    //     header("Location: payments.html?success=Payment was successful, We will contact you as soon as possible for your next move.");
-    // }else{
-    //     header("Location: payments.html?error=Payment process was interrupted, if any amount was deducted please contact us for followups.");
-    // }
+    if($save){
+        echo "<script>alert('saved')</script>";
+        echo "<script>window.location.href='http://127.0.0.1/Fovet/payments.html'</script>";
+    }else{
+        echo "<script>alert('Payment process was interrupted, if any amount was deducted please contact us for follow ups')</script>";
+        echo "<script>window.location.href='http://127.0.0.1/Fovet/payments.html'</script>";
+    }
 ?>

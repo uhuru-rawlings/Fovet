@@ -29,7 +29,8 @@ if(isset($_POST['pay'])){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'https://www.fovet.co/make_payments.php';  
+  // $CallBackURL = 'http://127.0.0.1/Fovet/make_payments.php';  
+  $CallBackURL = 'https://www.fovet.co/make_payments.php';
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -70,8 +71,7 @@ if(isset($_POST['pay'])){
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
   $curl_response = curl_exec($curl);
-  //print results
+  // echo $resp -> ResponseDescription;
   echo $curl_response;
-  header("Location: payments.html");
 };
 ?>
