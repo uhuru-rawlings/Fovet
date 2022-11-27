@@ -2,6 +2,7 @@
     class Registration {
         public $Username;
         public $Email;
+        public $Role;
         public $Password;
         public $conn;
 
@@ -19,9 +20,9 @@
             if($rows > 0){
                 return false;
             }else{
-                $sql = "INSERT INTO `Registration`(`Username`,`Email`,`Password`) VALUES(?,?,?)";
+                $sql = "INSERT INTO `Registration`(`Username`,`Email`,`Password`,`Roles`) VALUES(?,?,?,?)";
                 $query = $this ->conn -> prepare($sql);
-                $query -> execute([$this -> Username,$this -> Email,password_hash($this -> Password,PASSWORD_DEFAULT)]);
+                $query -> execute([$this -> Username,$this -> Email,password_hash($this -> Password,PASSWORD_DEFAULT),$this -> Role]);
                 if($query){
                     return true;
                 }else{
@@ -86,9 +87,9 @@
         }
         public function getUsers()
         {
-            $sql = "SELECT * FROM Registration";
+            $sql = "SELECT * FROM Registration WHERE Roles = ?";
             $query = $this -> conn -> prepare($sql);
-            $query -> execute();
+            $query -> execute([$this -> Role]);
             $rows = $query -> rowCount();
             if($rows > 0){
                 while($results = $query -> fetchAll(PDO::FETCH_ASSOC)){

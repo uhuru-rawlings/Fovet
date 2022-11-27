@@ -13,6 +13,7 @@
         $user  = new Registration($db);
         $user  -> Username = $username;
         $user  -> Email = $email_address;
+        $user  -> Role = "User";
         $user  -> Password = $user_password;
         $users = $user -> addUser(); 
         if($users){

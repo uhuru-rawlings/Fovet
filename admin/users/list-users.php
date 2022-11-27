@@ -2,8 +2,9 @@
     session_start();
     include_once("../../models/Registration.php");
     include_once("../../database/Database.php");
+    include_once("../../config.php");
     if(!isset($_SESSION['current_user'])){
-        header("Location: auth/index.php?error=Please login to proceed.");
+        header("Location: ../auth/index.php?error=Please login to proceed.");
     }
 ?>
 <html lang="en">
@@ -11,6 +12,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../../assets/images/Transparent.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/all.css">
@@ -38,9 +42,15 @@
         </section>
         <section class="content w-100">
             <section class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?php echo BASE_URL.'admin/index.php' ?>">Home</a></li>
+                    <li class="breadcrumb-item active">Manage Users</li>
+                </ol>
+            </nav>
             <!-- content -->
             <!-- users table -->
-            <div class="card mt-5">
+            <div class="card mt-3">
                 <div class="card-header">
                     <h4>user details.</h4>
                 </div>
@@ -69,6 +79,7 @@
                                 $conn = new Database();
                                 $db = $conn -> connection();
                                 $users = new Registration($db);
+                                $users -> Role = "User";
                                 $user = $users -> getUsers();
                                 if($user){
                                     foreach($user as $user){
@@ -128,6 +139,7 @@
         </section>
     </section>
 </body>
+    <script src="../assets/js/tables.js"></script>
     <script src="../../assets/js/all.js"></script>
     <script src="../../assets/js/solid.js"></script>
     <script src="../../assets/js/brands.js"></script>

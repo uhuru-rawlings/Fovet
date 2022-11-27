@@ -31,5 +31,19 @@
                 }
             }
         }
+
+        public function getPayments()
+        {
+            $sql = "SELECT * FROM Payments";
+            $query = $this -> conn -> prepare($sql);
+            $query -> execute();
+            if($query){
+                while($results = $query -> fetchAll(PDO::FETCH_ASSOC)){
+                    return $results;
+                }
+            }else{
+                return false;
+            }
+        }
     }
 ?>
