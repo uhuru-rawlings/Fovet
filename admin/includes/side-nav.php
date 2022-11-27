@@ -22,8 +22,8 @@
         <li>
             <a href="javascript:void(0)"><i class="fa-solid fa-users"></i> Courses</a>
             <ul>
-                <li><a href=""><i class="fa-solid fa-plus-circle"></i> Add courses</a></li>
-                <li><a href=""><i class="fa-solid fa-table"></i> Manage courses</a></li>
+                <li><a href="<?php echo BASE_URL.'admin/courses/add-courses.php' ?>"><i class="fa-solid fa-plus-circle"></i> Add courses</a></li>
+                <li><a href="<?php echo BASE_URL.'admin/courses/list-courses.php' ?>"><i class="fa-solid fa-table"></i> Manage courses</a></li>
             </ul>
         </li>
     </ul>
