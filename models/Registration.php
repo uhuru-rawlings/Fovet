@@ -4,6 +4,7 @@
         public $Email;
         public $Role;
         public $Password;
+        public $Id;
         public $conn;
 
         public function __construct($db)
@@ -85,6 +86,20 @@
                 return false;
             }
         }
+        public function updateUser()
+        {
+            $sql = "SELECT * FROM Registration WHERE id = ?";
+            $query = $this -> conn -> prepare($sql);
+            $query -> execute([$this -> Id]);
+            $rows = $query -> rowCount();
+            if($rows > 0){
+                while($results = $query -> fetch(PDO::FETCH_ASSOC)){
+                    return $results;
+                }
+            }else{
+                return false;
+            }
+        }
         public function getUsers()
         {
             $sql = "SELECT * FROM Registration WHERE Roles = ?";
@@ -95,6 +110,25 @@
                 while($results = $query -> fetchAll(PDO::FETCH_ASSOC)){
                     return $results;
                 }
+            }else{
+                return false;
+            }
+        }
+
+        public function updateAdmin()
+        {
+            if(empty($this -> Password) || $this -> Password == ""){
+                $sql = "UPDATE Registration SET Username = ?, Email = ? WHERE id = ?";
+                $query = $this -> conn -> prepare($sql);
+                $query -> execute([$this -> Username,$this -> Email,$this -> Id]);
+            }else{
+                $sql = "UPDATE Registration SET Username = ?, Email = ?, Password = ? WHERE id = ?";
+                $query = $this -> conn -> prepare($sql);
+                $query -> execute([$this -> Username,$this -> Email,password_hash($this -> Password,PASSWORD_DEFAULT),$this -> Id]);
+            }
+
+            if($query){
+                return true;
             }else{
                 return false;
             }

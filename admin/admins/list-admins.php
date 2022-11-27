@@ -45,14 +45,14 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?php echo BASE_URL.'admin/index.php' ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Manage Users</li>
+                    <li class="breadcrumb-item active">Manage Admin</li>
                 </ol>
             </nav>
             <!-- content -->
             <!-- users table -->
             <div class="card mt-3">
                 <div class="card-header">
-                    <h4>user details.</h4>
+                    <h4>Admin details.</h4>
                 </div>
                 <div class="card-body">
                     <?php
@@ -124,7 +124,10 @@
                                     ?>
                                 </td>
                                 <td><?php echo $user['Date_added'] ?></td>
-                                <td><a href="actions.php?delete=<?php echo $user['id'] ?>"><i class="fa-solid fa-trash text-danger"></i></a></td>
+                                <td>
+                                    <a href="update-admins.php?update=<?php echo $user['id'] ?>"><i class="fa-solid fa-pen text-primary"></i></a>
+                                    <a href="actions.php?delete=<?php echo $user['id'] ?>"><i class="fa-solid fa-trash text-danger"></i></a>
+                                </td>
                             </tr>
                             <?php
                                     }
