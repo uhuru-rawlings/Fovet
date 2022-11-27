@@ -52,6 +52,7 @@
 
         public function loginUser()
         {
+            session_start();
             $sql = "SELECT * FROM Registration WHERE Email = ?";
             $query = $this -> conn -> prepare($sql);
             $query -> execute([$this -> Email]);
@@ -77,6 +78,20 @@
             $rows = $query -> rowCount();
             if($rows > 0){
                 while($results = $query -> fetch(PDO::FETCH_ASSOC)){
+                    return $results;
+                }
+            }else{
+                return false;
+            }
+        }
+        public function getUsers()
+        {
+            $sql = "SELECT * FROM Registration";
+            $query = $this -> conn -> prepare($sql);
+            $query -> execute();
+            $rows = $query -> rowCount();
+            if($rows > 0){
+                while($results = $query -> fetchAll(PDO::FETCH_ASSOC)){
                     return $results;
                 }
             }else{

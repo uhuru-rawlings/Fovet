@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../../assets/images/Transparent.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/all.css">
+    <link rel="stylesheet" href="../../assets/css/solid.css">
+    <link rel="stylesheet" href="../../assets/css/regular.css">
+    <link rel="stylesheet" href="../../assets/css/brands.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/auth-style.css">
+    <title>Fovet | Login</title>
+</head>
+<body>
+    <div class="auth_content">
+        <div class="row" id="main-row">
+            <div class="col-sm-6" id="form-content">
+                <form action="login-fun.php" method="post">
+                    <div class="logo">
+                        <img src="../../assets/images/Transparent.png" width="100%" height="auto" alt="">
+                    </div>
+                    <h2 class="text-center">Login</h2>
+                    <?php
+                        if(isset($_GET['error'])){
+                            echo "<div class='alert alert-danger'>{$_GET['error']}</div>";
+                        }
+                    ?>
+                    <div class="form-group">
+                        <label for="email_address">Email</label>
+                        <input type="email" name="email_address" id="email_address" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password">Password</label>
+                        <input type="password" name="user_password" id="user_password" class="form-control" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" name="login" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6" id="image_section">
+                <img src="../../assets/images/consultancy.jpg" id="home" width="100%" height="100%" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../assets/js/all.js"></script>
+<script src="../../assets/js/solid.js"></script>
+<script src="../../assets/js/regular.js"></script>
+<script src="../../assets/js/brands.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/auth-validation.js"></script>
+</html>

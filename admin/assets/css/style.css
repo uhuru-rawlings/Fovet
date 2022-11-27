@@ -1,0 +1,64 @@
+body{
+    font-family: 'Poppins',sans-serif;
+}
+nav ul{
+    padding-left: 0;
+    width: 100%;
+}
+nav ul li{
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 2px;
+}
+nav ul li:hover{
+    background-color: #ececec;
+}
+nav ul li a{
+    text-decoration: none;
+}
+.logo a{
+    text-decoration: none;
+}
+section.top-navbar{
+    border-bottom: 1px solid #ececec;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+section.side-navbar{
+    width: 240px;
+    margin-top: 0;
+    border-right: 1px solid #ececec;
+}
+section.top-navbar .container-fluid{
+    align-items: center;
+}
+table tr{
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+}
+.table .btn-primary,.table .btn-success,.table .btn-warning{
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    transition: 0.75s;
+}
+.table .btn-success{
+    background-color: rgba(21, 115, 71,.3);
+    color: #157347;
+}
+.table .btn-success:hover{
+    background-color: #157347;
+    color: #FFFFFF;
+}
+
+.table .btn-warning{
+    background-color: rgba(255, 214, 94,.3);
+    color: #FFD65E;
+}
+.table .btn-warning:hover{
+    background-color: #FFD65E !important;
+    color: #1b1b1b !important;
+}
