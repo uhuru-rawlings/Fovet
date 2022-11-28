@@ -4,7 +4,7 @@
     include_once("../database/Database.php");
     include_once("../config.php");
     if(!isset($_SESSION['current_user'])){
-        header("Location: auth/index.php?error=Please login to proceed.");
+        header("Location: ../auth/index.html?error=Please login to proceed.");
     }
     $_SESSION['active'] = "dashboard";
 ?>
@@ -52,10 +52,40 @@
             <!-- users table -->
             <div class="card">
                 <div class="card-header">
-                    <h4>user details.</h4>
+                    <h4>Profile</h4>
                 </div>
                 <div class="card-body">
-                    
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="assets/images/user.png" width="100%" style="height: auto;" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                         <?php
+                            $conn = new Database();
+                            $db = $conn -> connection();
+                            $users = new Registration($db);
+                            $users -> Email = $_SESSION['current_user'];
+                            $user = $users -> getUser();
+                            if($user){
+                                $user_array = explode(" ",$user['Username']);
+                        ?>
+                            <p>
+                            <i class="fa-solid fa-address-card"></i> First name: <?php  echo $user_array[0] ?> 
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-address-card"></i> Last name: <?php  echo $user_array[1] ?>
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-envelope"></i> Email: <?php  echo $user['Email'] ?>
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-user-check"></i> Roles: <?php  echo $user['Roles'] ?>
+                            </p>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- end users table -->

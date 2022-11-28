@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex justify-content-between">
-    <div class="logo"><h2><a href="<?php echo BASE_URL.'admin/index.php' ?>">Fovet</a></h2></div>
+    <div class="logo"><h2><a href="<?php echo BASE_URL.'users/index.php' ?>">Fovet</a></h2></div>
     <div class="l-user">
         Welcome: 
         <?php

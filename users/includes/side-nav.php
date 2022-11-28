@@ -7,8 +7,8 @@
                 <i class="fa-solid fa-chevron-down"></i>
             </a>
             <ul id="nav-item3">
-                <li><a href="<?php echo BASE_URL.'admin/courses/add-courses.php' ?>"><i class="fa-solid fa-plus-circle"></i> Add courses</a></li>
-                <li><a href="<?php echo BASE_URL.'admin/courses/list-courses.php' ?>"><i class="fa-solid fa-table"></i> Manage courses</a></li>
+                <li><a href="<?php echo BASE_URL.'users/courses/my-courses.php' ?>"><i class="fa-solid fa-plus-circle"></i> My courses</a></li>
+                <li><a href="<?php echo BASE_URL.'users/courses/list-courses.php' ?>"><i class="fa-solid fa-table"></i> All courses</a></li>
             </ul>
         </li>
         <li><a href="<?php echo BASE_URL.'users/logout.php' ?>">
