@@ -22,7 +22,7 @@
         $courses -> Course_duration    = $course_duration;
         $courses -> Course_fee         = $course_fee;
         $courses -> Course_attendance  = $attendance;
-        $courses -> Course_image       = $class_image;
+        $courses -> Course_image       = $file_name;
         $courses -> Course_description = $description;
         if($file_upload){
             $course = $courses -> addCourse();

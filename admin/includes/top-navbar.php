@@ -9,7 +9,8 @@
             $users -> Email = $_SESSION['current_user'];
             $user = $users -> getUser();
             if($user){
-                echo $user['Username'];
+                $user_array = explode(" ",$user['Username']);
+                echo $user_array[0];
             }
         ?>
     </div>
