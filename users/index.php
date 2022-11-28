@@ -89,6 +89,56 @@
                 </div>
             </div>
             <!-- end users table -->
+            <!-- profile update -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h4>Personal Details</h4>
+                </div>
+                <div class="card-body">
+                    <form action="update-profile.php" method="post">
+                        <?php
+                            if(isset($_GET['success'])){
+                                echo "<div class='alert alert-success'>{$_GET['success']}</div>";
+                            }else if(isset($_GET['error'])){
+                                echo "<div class='alert alert-danger'>{$_GET['error']}</div>";
+                            }
+                        ?>
+                        <?php
+                            $conn = new Database();
+                            $db = $conn -> connection();
+                            $profile = new Registration($db);
+                            $profile -> Email = $_SESSION['current_user'];
+                            $user = $profile -> getUser();
+                            $profile -> Id = $user['id'];
+                            $user = $profile -> getProfile();
+                        ?>
+                        <div class="form-group">
+                            <label for="phone_number">Phone</label>
+                            <input type="tel" name="phone_number" id="phone_number" class="form-control" placeholder="Phone" required value="<?php echo $user['Phone'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select name="gender" id="gender" value="<?php echo $user['Gender'] ?>" class="form-control" placeholder="Phone" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" name="dob" id="dob" value="<?php echo $user['Dob'] ?>" class="form-control" placeholder="Date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" name="nationality"  value="<?php echo $user['Nationality'] ?>" id="nationality" class="form-control" placeholder="Nationality" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save Details" name="save" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- end profile update -->
             </section>
         </section>
     </section>
