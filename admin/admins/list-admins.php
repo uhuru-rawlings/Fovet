@@ -6,6 +6,7 @@
     if(!isset($_SESSION['current_user'])){
         header("Location: ../auth/index.php?error=Please login to proceed.");
     }
+    $_SESSION['active'] = "admins";
 ?>
 <html lang="en">
 <head>
@@ -142,9 +143,10 @@
         </section>
     </section>
 </body>
-    <script src="../assets/js/tables.js"></script>
-    <script src="../../assets/js/all.js"></script>
-    <script src="../../assets/js/solid.js"></script>
-    <script src="../../assets/js/brands.js"></script>
-    <script src="../../assets/js/regular.js"></script>
+    <script defer src="../assets/js/navbar.js"></script>
+    <script defer src="../assets/js/tables.js"></script>
+    <script defer src="../../assets/js/all.js"></script>
+    <script defer src="../../assets/js/solid.js"></script>
+    <script defer src="../../assets/js/brands.js"></script>
+    <script defer src="../../assets/js/regular.js"></script>
 </html>

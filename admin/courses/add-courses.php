@@ -6,6 +6,7 @@
     if(!isset($_SESSION['current_user'])){
         header("Location: ../auth/index.php?error=Please login to proceed.");
     }
+    $_SESSION['active'] = "courses";
 ?>
 <html lang="en">
 <head>
@@ -105,11 +106,12 @@
     <script type="text/javascript">
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
     </script>
-    <script type="text/javascript" src="//js.nicedit.com/nicEdit-latest.js"></script> 
+    <script defer type="text/javascript" src="//js.nicedit.com/nicEdit-latest.js"></script> 
     <!-- <script src="../assets/js/nicEdit.js"></script> -->
-    <script src="../assets/js/tables.js"></script>
-    <script src="../../assets/js/all.js"></script>
-    <script src="../../assets/js/solid.js"></script>
-    <script src="../../assets/js/brands.js"></script>
-    <script src="../../assets/js/regular.js"></script>
+    <script defer src="../assets/js/navbar.js"></script>
+    <script defer src="../assets/js/tables.js"></script>
+    <script defer src="../../assets/js/all.js"></script>
+    <script defer src="../../assets/js/solid.js"></script>
+    <script defer src="../../assets/js/brands.js"></script>
+    <script defer src="../../assets/js/regular.js"></script>
 </html>
