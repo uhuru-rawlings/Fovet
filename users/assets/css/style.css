@@ -1,0 +1,119 @@
+body{
+    /* font-family: 'Poppins',sans-serif; */
+    font-family:'Nunito',sans-serif;
+    color: #2a2a2b;
+    font-size: 16px;
+}
+nav ul{
+    padding-left: 0;
+    width: 100%;
+}
+nav ul li{
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 2px;
+    transition: 0.5s ease-in;
+}
+ul li ul{
+    display: none;
+}
+a.toggler{
+    display: flex;
+    justify-content: space-between;
+}
+.active ul{
+    display: block;
+}
+nav ul li:hover{
+    background-color: #ececec;
+}
+nav ul li.active{
+    background-color: #ececec;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #2a2a2b;
+}
+.logo a{
+    text-decoration: none;
+}
+section.top-navbar{
+    border-bottom: 1px solid #ececec;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    background-color: #FFFFFF;
+}
+section.side-navbar{
+    width: 240px;
+    margin-top: 0;
+    border-right: 1px solid #ececec;
+}
+section.top-navbar .container-fluid{
+    align-items: center;
+}
+table tr{
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+}
+.table .btn-primary,.table .btn-success,.table .btn-warning{
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    transition: 0.75s;
+}
+.table .btn-success{
+    background-color: rgba(21, 115, 71,.3);
+    color: #157347;
+}
+.table .btn-success:hover{
+    background-color: #157347;
+    color: #FFFFFF;
+}
+
+.table .btn-warning{
+    background-color: rgba(255, 214, 94,.3);
+    color: #FFD65E;
+}
+.table .btn-warning:hover{
+    background-color: #FFD65E !important;
+    color: #1b1b1b !important;
+}
+.full-body{
+    height: calc(100vh - 62px);
+    overflow: hidden;
+}
+body::-webkit-scrollbar{
+    width: 0;
+}
+.content{
+    overflow: auto;
+}
+table tr, table td{
+    color: #2a2a2b;
+}
+table tr{
+    font-size: 14px;
+}
+form .form-group{
+    margin-bottom: 15px;
+}
+td .fa-pen{
+    padding: 5px;
+    border-radius: 2px;
+    background-color: rgba(13, 110, 253,.4);
+}
+td .fa-trash{
+    padding: 5px;
+    border-radius: 2px;
+    background-color: rgba(220, 53, 69,.4);
+}
+textarea#description{
+    height: 150px;
+    resize: none;
+}
