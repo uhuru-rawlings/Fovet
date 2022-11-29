@@ -98,8 +98,6 @@
                             </tr>
                             <?php
                                     }
-                                }else{
-                                    echo "<tr><td colspan='6'>No Applications sent yet.</td></tr>";
                                 }
                             ?>
                         </tbody>

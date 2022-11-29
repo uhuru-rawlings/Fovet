@@ -156,7 +156,7 @@
                     </form>
                     <?php
                         }else{
-                            echo "<script>alert('please provide personal details to proceed')</script>";
+                            echo "<div class='alert alert-danger'>Fill in personal details to proceed.</div>";
                         }
                     ?>
                 </div>
