@@ -5,6 +5,7 @@
         public $Phone;
         public $Altphone;
         public $StartDate;
+        public $course;
         private $conn;
 
         public function __construct($db)
@@ -21,9 +22,9 @@
             if($rows > 0){
                 return false;
             }else{
-                $sql = "INSERT INTO Applications(Fullname,Email,Phone,Altphone,StartDate) VALUES(?,?,?,?,?)";
+                $sql = "INSERT INTO Applications(course,Fullname,Email,Phone,Altphone,StartDate) VALUES(?,?,?,?,?)";
                 $query = $this -> conn -> prepare($sql);
-                $query -> execute([$this -> Fullname,$this -> Email,$this -> Phone,$this -> Altphone,$this -> StartDate]);
+                $query -> execute([$this -> course,$this -> Fullname,$this -> Email,$this -> Phone,$this -> Altphone,$this -> StartDate]);
                 if($query){
                     return true;
                 }else{
