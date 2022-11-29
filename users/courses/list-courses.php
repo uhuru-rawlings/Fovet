@@ -115,26 +115,36 @@
                     <h3 class="text-center">Fill The Form To Apply</h3>
                 </div>
                 <div class="card-body">
+                    <?php
+                        $conn = new Database();
+                        $db = $conn -> connection();
+                        $profile = new Registration($db);
+                        $profile -> Email = $_SESSION['current_user'];
+                        $user = $profile -> getUser();
+                        $profile -> Id = $user['id'];
+                        $user = $profile -> getProfile();
+                        if($user){
+                    ?>
                     <form action="save_application.php" method="post">
                         <div class="form-group">
-                            <label for="course_id">Course Id</label>
-                            <input type="text" name="course_id" id="course_id" class="form-control" placeholder="Course Id" required>
+                            <!-- <label for="course_id">Course Id</label> -->
+                            <input type="hidden" name="course_id" id="course_id" class="form-control" placeholder="Course Id" required>
                         </div>
                         <div class="form-group">
                             <label for="Fullname">Fullname</label>
-                            <input type="text" name="Fullname" id="Fullname" class="form-control" placeholder="Enter Fullname" required>
+                            <input type="text" name="Fullname" id="Fullname" class="form-control" placeholder="Enter Fullname" required value="<?php echo $user['Username'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="Email">Email</label>
-                            <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email" required>
+                            <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email" required value="<?php echo $user['Email'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="Phone">Phone</label>
-                            <input type="tel" name="Phone" id="Phone" class="form-control" placeholder="Enter Phone Number" required>
+                            <input type="tel" name="Phone" id="Phone" class="form-control" placeholder="Enter Phone Number" required value="<?php echo $user['Phone'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="Alt_Phone">Alternative Phone</label>
-                            <input type="tel" name="Alt_Phone" id="Alt_Phone" class="form-control" placeholder="Enter Alternative Phone Number" required>
+                            <input type="tel" name="Alt_Phone" id="Alt_Phone" class="form-control" placeholder="Enter Alternative Phone Number" required value="<?php echo $user['Phone'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="Start_date">Start Date</label>
@@ -144,6 +154,11 @@
                             <input type="submit" value="Send Application" name="apply" class="btn btn-primary">
                         </div>
                     </form>
+                    <?php
+                        }else{
+                            echo "<script>alert('please provide personal details to proceed')</script>";
+                        }
+                    ?>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-secondary" onclick="closeApplicationForm()">Close</button>

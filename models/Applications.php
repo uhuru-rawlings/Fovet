@@ -45,5 +45,20 @@
                 return false;
             }
         }
+
+        public function getApplications()
+        {
+            $sql = "SELECT Courses.id,Courses.Course_Name,Courses.Course_Duration,Courses.Course_Fee,Courses.Course_Attendance,Courses.Date_added,Applications.StartDate,Applications.is_payed FROM Courses INNER JOIN Applications ON Applications.course = Courses.id WHERE Email = ?";
+            $query = $this -> conn -> prepare($sql);
+            $query -> execute([$this -> Email]);
+            $rows = $query -> rowCount();
+            if($rows > 0){
+                while($results = $query -> fetchAll(PDO::FETCH_ASSOC)){
+                    return $results;
+                }
+            }else{
+                return false;
+            }
+        }
     }
 ?>

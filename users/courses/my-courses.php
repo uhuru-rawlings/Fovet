@@ -3,6 +3,7 @@
     include_once("../../models/Registration.php");
     include_once("../../database/Database.php");
     include_once("../../models/Courses.php");
+    include_once("../../models/Applications.php");
     include_once("../../config.php");
     if(!isset($_SESSION['current_user'])){
         header("Location: ../../auth/index.html?error=Please login to proceed.");
@@ -72,16 +73,17 @@
                                 <th>Duration</th>
                                 <th>Fees</th>
                                 <th>Attendance</th>
-                                <th>Date Added</th>
-                                <!-- <th>Payment Status</th> -->
+                                <th>Start Date</th>
+                                <th>Payment Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                                 $conn = new Database();
                                 $db = $conn -> connection();
-                                $users = new Courses($db);
-                                $user = $users -> getCourses();
+                                $users = new Applications($db);
+                                $users -> Email = $_SESSION['current_user'];
+                                $user = $users -> getApplications();
                                 if($user){
                                     foreach($user as $user){
                             ?>
@@ -91,11 +93,13 @@
                                 <td><?php echo $user['Course_Duration'].' Months' ?></td>
                                 <td><?php echo 'Kshs '.$user['Course_Fee'] ?></td>
                                 <td><?php echo $user['Course_Attendance'] ?></td>
-                                <td><?php echo $user['Date_added'] ?></td>
-                                <!-- <td><?php //echo $user['is_payed'] ?></td> -->
+                                <td><?php echo $user['StartDate'] ?></td>
+                                <td><?php if($user['is_payed']){ echo $user['is_payed']; }else{echo "Not Payed";} ?></td>
                             </tr>
                             <?php
                                     }
+                                }else{
+                                    echo "<tr><td colspan='6'>No Applications sent yet.</td></tr>";
                                 }
                             ?>
                         </tbody>
