@@ -95,6 +95,16 @@
                     <h4>Personal Details</h4>
                 </div>
                 <div class="card-body">
+                    <?php
+                        $conn = new Database();
+                        $db = $conn -> connection();
+                        $profile = new Registration($db);
+                        $profile -> Email = $_SESSION['current_user'];
+                        $user = $profile -> getUser();
+                        $profile -> Id = $user['id'];
+                        $user = $profile -> getProfile();
+                        if($user){
+                    ?>
                     <form action="update-profile.php" method="post">
                         <?php
                             if(isset($_GET['success'])){
@@ -102,15 +112,6 @@
                             }else if(isset($_GET['error'])){
                                 echo "<div class='alert alert-danger'>{$_GET['error']}</div>";
                             }
-                        ?>
-                        <?php
-                            $conn = new Database();
-                            $db = $conn -> connection();
-                            $profile = new Registration($db);
-                            $profile -> Email = $_SESSION['current_user'];
-                            $user = $profile -> getUser();
-                            $profile -> Id = $user['id'];
-                            $user = $profile -> getProfile();
                         ?>
                         <div class="form-group">
                             <label for="phone_number">Phone</label>
@@ -136,6 +137,38 @@
                             <input type="submit" value="Save Details" name="save" class="btn btn-primary">
                         </div>
                     </form>
+                    <?php
+                        }else{
+                    ?>
+                    <form action="update-profile.php" method="post">
+                        <div class="form-group">
+                            <label for="phone_number">Phone</label>
+                            <input type="tel" name="phone_number" id="phone_number" class="form-control" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select name="gender" id="gender" class="form-control" placeholder="Phone" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" name="dob" id="dob" class="form-control" placeholder="Date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" name="nationality" id="nationality" class="form-control" placeholder="Nationality" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save Details" name="save" class="btn btn-primary">
+                        </div>
+                    </form>
+                    <?php
+                        }
+                    ?>
+
                 </div>
             </div>
             <!-- end profile update -->

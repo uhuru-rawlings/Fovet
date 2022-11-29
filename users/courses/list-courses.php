@@ -93,9 +93,7 @@
                                 <td><?php echo $user['Course_Attendance'] ?></td>
                                 <td><?php echo $user['Date_added'] ?></td>
                                 <td>
-                                    <a href="#">
-                                        <button class="btn btn-primary">Apply Now</button>
-                                    </a>
+                                    <button class="btn btn-primary" id="<?php echo $user['id'] ?>" onclick="openApplicationForm(this.id)">Apply Now</button>
                                 </td>
                             </tr>
                             <?php
@@ -110,6 +108,49 @@
             </section>
         </section>
     </section>
+    <div class="carousel-container" id="carousel-container">
+        <div class="container py-4">
+            <div class="carousel col-sm-6 m-auto card">
+                <div class="card-header">
+                    <h3 class="text-center">Fill The Form To Apply</h3>
+                </div>
+                <div class="card-body">
+                    <form action="save_application.php" method="post">
+                        <div class="form-group">
+                            <label for="course_id">Course Id</label>
+                            <input type="text" name="course_id" id="course_id" class="form-control" placeholder="Course Id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Fullname">Fullname</label>
+                            <input type="text" name="Fullname" id="Fullname" class="form-control" placeholder="Enter Fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone</label>
+                            <input type="tel" name="Phone" id="Phone" class="form-control" placeholder="Enter Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Alt_Phone">Alternative Phone</label>
+                            <input type="tel" name="Alt_Phone" id="Alt_Phone" class="form-control" placeholder="Enter Alternative Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Start_date">Start Date</label>
+                            <input type="date" name="Start_date" id="Start_date" class="form-control" placeholder="Start Date" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Application" name="apply" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-secondary" onclick="closeApplicationForm()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
     <script defer src="../assets/js/navbar.js"></script>
     <script defer src="../assets/js/tables.js"></script>

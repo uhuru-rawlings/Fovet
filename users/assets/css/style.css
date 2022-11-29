@@ -117,3 +117,28 @@ textarea#description{
     height: 150px;
     resize: none;
 }
+body{
+    position: relative;
+}
+#carousel-container{
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(21,44,73,.4);
+    width:100%;
+    height:100vh;
+    overflow-y:scroll;
+    display:none
+}
+#carousel-container::-webkit-scrollbar{
+    width:0
+}
+#carousel-container .container{
+    height:100%
+}
+#carousel-container{
+    z-index:400455667;
+}#carousel-container .form-group{
+    margin-bottom:15px!important
+}
