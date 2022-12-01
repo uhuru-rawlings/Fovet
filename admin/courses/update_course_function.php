@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['save'])){
-        ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+        // ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
         include_once("../../database/Database.php");
         include_once("../../models/Courses.php");
         $course_id = $_POST['course_id'];
