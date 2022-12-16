@@ -54,6 +54,7 @@
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
                 </div>
             </div>
         </div>
@@ -75,9 +76,9 @@
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link active">Services</a>
-                    <a href="users/index.php" class="nav-item nav-link">Training</a>
+                    <!-- <a href="users/index.php" class="nav-item nav-link">Training</a> -->
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
-                    <a href="auth/index.html" id="auth_accounts" class="nav-item nav-link">Login/Signup</a>
+                    <a href="auth/index.html" id="auth_accounts" class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </nav>
@@ -164,7 +165,7 @@
                     <div class="row gx-5">
                         <div class="col-lg-6 col-md-12 pt-5 mb-5">
                             <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
+                                <h3 class="text-light mb-0">Contact Us</h3>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
@@ -178,7 +179,8 @@
                                 <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="#"><i class="fab fa-youtube fw-normal"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 pt-0 pt-lg-5 mb-5">
