@@ -1,0 +1,62 @@
+:root{
+    --primary:#F28F37;
+    --secondary:#34AD54;
+    --light:#EEF9FF;
+    --dark:#152C49;
+}
+.flip-cards{
+    margin: 15px;
+    height: 400px;
+    box-shadow: 3px 3px 6px rgba(211,211,211);
+    position: relative;
+    border-radius: 5px;
+    transition: 0.75s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.card-container:hover > .flip-cards{
+    transform: rotateY(180deg);
+}
+.flip-cards .image-container{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin: auto;
+}
+.image-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.front,.back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+.back {
+    background-color: var(--dark);
+    transform: rotateY(180deg);
+}
+.team-details{
+    height: fit-content;
+    padding: 10px;
+}
+.back a:not(.last){
+    margin-right: 10px;
+}
+.icons_f{
+    height: 40px;
+    width: 40px;
+    border: 1px dashed var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
